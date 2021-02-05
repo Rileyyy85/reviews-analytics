@@ -6,8 +6,9 @@ with open('reviews.txt', 'r') as f:
         count += 1
         if count % 1000 == 0:
             print(len(data))  # 因爲for loop是把清單中的東西一個一個拿出來，所以每拿一個他就會print一次
-print(len(data))
+print('檔案讀取完了，總共有', len(data), '筆資料')
 
-print(data[0])
-print('----------------------')
-print(data[1])
+sum_len = 0
+for d in data:
+    sum_len = sum_len + len(d)
+print('留言的平均長度為', sum_len / len(data))
